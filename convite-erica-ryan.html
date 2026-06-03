@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Érica & Ryan — 15.11.2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive-dark: #3d4a2e;
+    --olive: #5a6e3c;
+    --olive-mid: #7a8f52;
+    --olive-light: #a8b878;
+    --olive-pale: #d4ddb8;
+    --cream: #f5f0e8;
+    --cream-dark: #ede5d4;
+    --gold: #b8975a;
+    --gold-light: #d4b87a;
+    --text-dark: #2a3020;
+    --text-mid: #4a5a35;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100svh;
+    background: linear-gradient(160deg, var(--olive-dark) 0%, #2e3d1e 50%, var(--olive) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-label {
+    font-weight: 200;
+    letter-spacing: 0.45em;
+    font-size: 0.65rem;
+    color: var(--olive-pale);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+  .hero-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 15vw, 9rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 0.9;
+    animation: fadeUp 1s ease 0.4s both;
+  }
+  .hero-names .amp {
+    font-style: italic;
+    color: var(--gold-light);
+    display: block;
+    font-size: 0.55em;
+    line-height: 1.6;
+  }
+  .hero-date-bar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 32px;
+    animation: fadeUp 1s ease 0.6s both;
+  }
+  .hero-date-bar span {
+    font-weight: 200;
+    letter-spacing: 0.5em;
+    font-size: 0.7rem;
+    color: var(--olive-pale);
+    text-transform: uppercase;
+  }
+  .hero-date-line {
+    width: 50px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero-date-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    letter-spacing: 0.2em;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: fadeUp 1s ease 1s both;
+  }
+  .scroll-hint span {
+    font-weight: 200;
+    letter-spacing: 0.4em;
+    font-size: 0.55rem;
+    color: var(--olive-pale);
+    text-transform: uppercase;
+  }
+  .scroll-arrow {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollDown 1.8s ease-in-out infinite;
+  }
+  @keyframes scrollDown {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── VERSE ── */
+  .verse-section {
+    background: var(--cream-dark);
+    padding: 90px 24px;
+    text-align: center;
+  }
+  .verse-deco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .verse-deco-line {
+    width: 60px;
+    height: 1px;
+    background: var(--olive-mid);
+  }
+  .verse-deco-icon {
+    color: var(--olive);
+    font-size: 1.1rem;
+  }
+  .verse-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3.5vw, 1.7rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto 20px;
+  }
+  .verse-ref {
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    font-size: 0.7rem;
+    color: var(--olive);
+    text-transform: uppercase;
+  }
+
+  /* ── DETAILS ── */
+  .details-section {
+    background: var(--olive-dark);
+    padding: 90px 24px;
+  }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .section-label {
+    font-weight: 200;
+    letter-spacing: 0.45em;
+    font-size: 0.6rem;
+    color: var(--olive-pale);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .section-title em { font-style: italic; color: var(--gold-light); }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .detail-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(168,184,120,0.15);
+    padding: 40px 30px;
+    text-align: center;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .detail-card:hover {
+    background: rgba(168,184,120,0.08);
+    border-color: rgba(168,184,120,0.35);
+  }
+  .detail-icon {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .detail-label {
+    font-weight: 200;
+    letter-spacing: 0.4em;
+    font-size: 0.58rem;
+    color: var(--olive-pale);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .detail-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--cream);
+  }
+  .detail-sub {
+    font-weight: 200;
+    font-size: 0.7rem;
+    color: var(--olive-light);
+    margin-top: 6px;
+    line-height: 1.6;
+    display: block;
+  }
+
+  /* ── LOCATION ── */
+  .location-section {
+    background: var(--cream);
+    padding: 90px 24px;
+    text-align: center;
+  }
+  .location-section .section-title { color: var(--olive-dark); }
+  .location-section .section-label { color: var(--olive-mid); }
+
+  .address-box {
+    max-width: 480px;
+    margin: 40px auto 0;
+    border: 1px solid var(--olive-pale);
+    padding: 36px 30px;
+    position: relative;
+  }
+  .address-box::before,
+  .address-box::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: var(--olive-mid);
+    border-style: solid;
+  }
+  .address-box::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+  .address-box::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+  .address-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--olive-dark);
+    margin-bottom: 10px;
+  }
+  .address-text {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+  }
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 12px 28px;
+    border: 1px solid var(--olive);
+    color: var(--olive);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+  .map-btn:hover { background: var(--olive); color: var(--cream); }
+
+  /* ── GIFTS ── */
+  .gifts-section {
+    background: var(--cream-dark);
+    padding: 90px 24px;
+    text-align: center;
+  }
+  .gifts-section .section-title { color: var(--olive-dark); }
+  .gifts-section .section-label { color: var(--olive-mid); }
+
+  .gifts-msg {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-mid);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.8;
+  }
+  .gift-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 40px;
+    background: var(--olive-dark);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .gift-btn:hover { background: var(--olive); transform: translateY(-2px); }
+
+  /* ── RSVP ── */
+  .rsvp-section {
+    background: var(--olive-dark);
+    padding: 90px 24px;
+    text-align: center;
+  }
+  .rsvp-msg {
+    font-weight: 200;
+    font-size: 0.8rem;
+    color: var(--olive-pale);
+    max-width: 460px;
+    margin: 0 auto 40px;
+    line-height: 1.9;
+    letter-spacing: 0.05em;
+  }
+  .rsvp-form {
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .rsvp-form input,
+  .rsvp-form select {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(168,184,120,0.25);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    outline: none;
+    transition: border-color 0.3s;
+    -webkit-appearance: none;
+  }
+  .rsvp-form input::placeholder { color: rgba(212,221,184,0.5); }
+  .rsvp-form input:focus,
+  .rsvp-form select:focus { border-color: var(--gold); }
+  .rsvp-form select option { background: var(--olive-dark); color: var(--cream); }
+
+  .rsvp-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--gold);
+    color: var(--text-dark);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .rsvp-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .rsvp-success {
+    display: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-top: 20px;
+  }
+
+  /* ── CLOSING ── */
+  .closing-section {
+    background: linear-gradient(160deg, #2e3d1e 0%, var(--olive-dark) 100%);
+    padding: 100px 24px;
+    text-align: center;
+  }
+  .closing-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 0.9;
+    margin-bottom: 24px;
+  }
+  .closing-names em {
+    font-style: italic;
+    color: var(--gold-light);
+    display: block;
+    font-size: 0.45em;
+    line-height: 2;
+  }
+  .closing-msg {
+    font-weight: 200;
+    letter-spacing: 0.35em;
+    font-size: 0.65rem;
+    color: var(--olive-pale);
+    text-transform: uppercase;
+  }
+  .closing-divider {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 30px auto;
+  }
+
+  /* ── REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-label">Convidam para o seu casamento</p>
+    <h1 class="hero-names">
+      Érica
+      <span class="amp">&</span>
+      Ryan
+    </h1>
+    <div class="hero-date-bar">
+      <div class="hero-date-line"></div>
+      <span class="hero-date-num">15 · 11 · 2026</span>
+      <div class="hero-date-line"></div>
+    </div>
+    <div class="scroll-hint">
+      <span>rolar</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- VERSE -->
+  <section class="verse-section">
+    <div class="verse-deco reveal">
+      <div class="verse-deco-line"></div>
+      <span class="verse-deco-icon">✦</span>
+      <div class="verse-deco-line"></div>
+    </div>
+    <blockquote class="verse-text reveal">
+      "Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do SENHOR fez isto, e o Santo de Israel o criou."
+    </blockquote>
+    <p class="verse-ref reveal">— Isaías 41:20</p>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="details-section">
+    <div class="section-heading reveal">
+      <span class="section-label">Informações</span>
+      <h2 class="section-title">O Grande <em>Dia</em></h2>
+    </div>
+    <div class="details-grid">
+      <div class="detail-card reveal">
+        <span class="detail-icon">📅</span>
+        <span class="detail-label">Data</span>
+        <div class="detail-value">15 · 11 · 2026</div>
+        <span class="detail-sub">Domingo</span>
+      </div>
+      <div class="detail-card reveal">
+        <span class="detail-icon">🕔</span>
+        <span class="detail-label">Horário</span>
+        <div class="detail-value">17h00</div>
+        <span class="detail-sub">Chegue com antecedência</span>
+      </div>
+      <div class="detail-card reveal">
+        <span class="detail-icon">📍</span>
+        <span class="detail-label">Local</span>
+        <div class="detail-value">Espaçobarn</div>
+        <span class="detail-sub">Caxias do Sul, RS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location-section">
+    <div class="section-heading reveal">
+      <span class="section-label">Como chegar</span>
+      <h2 class="section-title">O <em>Local</em></h2>
+    </div>
+    <div class="address-box reveal">
+      <p class="address-name">Espaçobarn</p>
+      <p class="address-text">
+        Travessa Santa Rita, 1360<br>
+        Caxias do Sul – RS<br>
+        CEP 95124-000
+      </p>
+      <a class="map-btn"
+         href="https://maps.google.com/?q=Travessa+Santa+Rita+1360+Caxias+do+Sul+RS"
+         target="_blank" rel="noopener">
+        🗺 Ver no mapa
+      </a>
+    </div>
+  </section>
+
+  <!-- GIFTS -->
+  <section class="gifts-section">
+    <div class="section-heading reveal">
+      <span class="section-label">Presentes</span>
+      <h2 class="section-title">Lista de <em>Presentes</em></h2>
+    </div>
+    <p class="gifts-msg reveal">
+      Sua presença já é o nosso maior presente.<br>
+      Mas se desejar nos presentear, preparamos uma lista especial.
+    </p>
+    <a class="gift-btn reveal"
+       href="https://noivos.casar.com/erica-e-ryan"
+       target="_blank" rel="noopener">
+      🎁 Ver lista de presentes
+    </a>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp-section">
+    <div class="section-heading reveal">
+      <span class="section-label">Confirmação</span>
+      <h2 class="section-title">Confirme sua <em>Presença</em></h2>
+    </div>
+    <p class="rsvp-msg reveal">
+      Para nos ajudar na organização, pedimos que confirme sua presença até <strong style="color:var(--gold-light); font-weight:300;">01 de novembro de 2026</strong>.
+    </p>
+    <div class="rsvp-form reveal" id="rsvpForm">
+      <input type="text" id="rsvpName" placeholder="Seu nome completo" />
+      <select id="rsvpStatus">
+        <option value="" disabled selected>Confirmação de presença</option>
+        <option value="sim">✓ Sim, estarei presente!</option>
+        <option value="nao">✗ Não poderei comparecer</option>
+      </select>
+      <input type="number" id="rsvpGuests" placeholder="Número de acompanhantes (0 se vier sozinho)" min="0" max="10" />
+      <button class="rsvp-btn" onclick="submitRsvp()">Confirmar Presença</button>
+      <p class="rsvp-success" id="rsvpSuccess">Obrigada! Sua presença foi confirmada com amor. 🌿</p>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing-section">
+    <div class="closing-divider"></div>
+    <h2 class="closing-names reveal">
+      Érica
+      <em>&</em>
+      Ryan
+    </h2>
+    <p class="closing-msg reveal">Com amor, esperamos por você</p>
+    <div class="closing-divider"></div>
+    <p class="closing-msg reveal" style="font-size:0.55rem; opacity:0.5; margin-top:10px;">15 · 11 · 2026</p>
+  </section>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // RSVP
+  function submitRsvp() {
+    const name = document.getElementById('rsvpName').value.trim();
+    const status = document.getElementById('rsvpStatus').value;
+    if (!name || !status) {
+      alert('Por favor, preencha seu nome e confirmação.');
+      return;
+    }
+    const btn = document.querySelector('.rsvp-btn');
+    btn.textContent = '✓ Enviado!';
+    btn.style.background = '#7a8f52';
+    btn.disabled = true;
+    document.getElementById('rsvpSuccess').style.display = 'block';
+    // scroll to success
+    document.getElementById('rsvpSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+</script>
+</body>
+</html>
